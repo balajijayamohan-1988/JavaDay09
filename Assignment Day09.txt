@@ -100,7 +100,7 @@ a is : {!=10, #=30, $=40, %=50, &=10, (=40, *=50, @=20, ^=60}
 
 
 /* Day09 - Task 1.4
-Description: Create HashTable with the below key and values
+Description: Create Hashtable with the below key and values
 key: vel,Ganesh,Dinesh,Vengat,subash.
 values: Selenium,framework,oracle,corejava,jira */
 
@@ -120,4 +120,75 @@ public class SampleOne{
 }
 /* runtime output
 a is : {Vengat=corejava, Ganesh=framework, vel=Selenium, Dinesh=oracle, Subash=jira}
+*/
+
+
+
+
+
+/* Day09-Task 2.1
+Description: Create a HashMap with the below key and value and get(print) 
+the key only in the map.
+Key:10,20,30,40,50,60,10,50,40
+values: java,sql,oops,Sql,oracle,DB,selenium,psql,Hadoop
+*/
+
+//project Sample
+package org.test;
+import java.util.*;
+public class SampleOne{
+    public static void main(String[] args) {
+        Map<Integer,String> a = new HashMap<>();
+            a.put(10,"java");
+            a.put(20,"sql");
+            a.put(30,"oops");
+            a.put(40,"Sql");
+            a.put(50,"oracle");
+            a.put(60,"DB");
+            a.put(10,"selenium");
+            a.put(50,"psql");
+            a.put(40,"HadoopS");
+                System.out.println("1. a keya & Values is : "+a);
+                Set<Integer> a1 = a.keySet();
+                    System.out.println(2. "a1 keyset is : "+a1);
+    }
+}
+/* Runtime output1. a keya & Values is : {50=psql, 20=sql, 40=HadoopS, 10=selenium, 60=DB, 30=oops}
+2. a1 keyset is : [50, 20, 40, 10, 60, 30]
+*/
+
+
+
+
+
+/*Day09-Task 2.2
+Description: Create a LinkedHashMap with the below key and value and get(print) 
+the key only in the map.
+Key:10,20,30,40,50,60,10,50,40
+values: 10,20,30,40,50,60,10,50,40
+*/
+
+//project Sample
+package org.test;
+import java.util.*;
+public class SampleOne {
+    public static void main(String[] args) {
+        Map<Integer,Integer> a = new LinkedHashMap<>();
+            a.put(10,10);
+            a.put(20,20);
+            a.put(30,30);
+            a.put(40,40);
+            a.put(50,50);
+            a.put(60,60);
+            a.put(10,10);
+            a.put(50,50);
+            a.put(40,40);
+                System.out.println("1. a key&Value is : "+a);
+                Set<Integer> a1 = a.keySet();
+                     System.out.println("2. keyset is : "+a1);
+    }
+}
+/* Runtime output
+1. a key&Value is : {10=10, 20=20, 30=30, 40=40, 50=50, 60=60}
+2. keyset is : [10, 20, 30, 40, 50, 60]
 */
