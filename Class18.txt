@@ -1,0 +1,41 @@
+//Static method and variable using same and outside class
+
+package org.hcl.test;
+public class ClientDetails {
+	public static void cliId() {
+		System.out.println("cli Id is 100");
+	}
+	
+	public static void main(String[] args) {
+		cliId();
+		
+	}
+}
+package org.tcs.test;
+import org.hcl.test.ClientDetails;
+public class CompanyDetails extends ClientDetails{
+	public static void empId() {
+		System.out.println("empId is 100");
+	}
+	static int a1=20;
+	public static void main(String[] args) {
+		empId();
+		ClientDetails.cliId();//classname.staticmethodname
+		
+		System.out.println("*** with extends***");
+		
+		CompanyDetails co = new CompanyDetails();
+		co.cliId();
+		co.empId();
+	System.out.println(a1=30);
+		
+	}
+}
+/* runtime output
+empId is 100
+cli Id is 100
+*** with extends***
+cli Id is 100
+empId is 100
+30
+*/
